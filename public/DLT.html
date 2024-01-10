@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Delete</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,100;1,400&display=swap');
+
+    body {
+        background-image: url(images/bg1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    #form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        bottom: 40px;
+        left: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input {
+        border-radius: 20px;
+        color: white;
+        height: 50px;
+        width: 280px;
+        background-color: transparent;
+        border: 2px solid white;
+        position: relative;
+        font-family: poppins;
+        box-sizing: border-box;
+        padding: 20px;
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+
+    #btn_sub{
+        text-decoration: none;
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        width: 80px;
+        letter-spacing: 2px;
+        border-radius: 10px;
+        height: 40px;
+        width: 60px;
+        transition: background-color 0.3s ease;
+    }
+
+    h1 {
+        color: #FFF;
+        font-family: Poppins;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+    }
+
+    #btn_sub:hover {
+        background-color: white;
+        color: black;
+    }
+
+    .btn_sub:hover {
+        background-color: white;
+        color: black;
+    }
+</style>
+
+<body>
+    <div id="form-container">
+        <form>
+            <h1>EMPLOYEE ID</h1>
+            <input required name="id" type="text">
+            <button style="letter-spacing: 3px; font-weight: 600; width: 82px; text-align: center;" type="submit" class="btn_sub">DELETE</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const idToDelete = document.querySelector('input').value;
+
+            const response = await fetch(`/delete/${idToDelete}`, {
+                method: 'DELETE',
+            });
+
+            if (response.ok) {
+                window.location.href = '/Front.html'; // Redirect to the root path
+            } else {
+                alert('Error deleting profile. Please try again.');
+            }
+        });
+    </script>
+</body>
+
+</html>

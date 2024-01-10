@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBMS PROJECT</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,100;1,400&display=swap');
+
+    body {
+        background-image: url(images/bg1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 620px;
+        height: 567px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 {
+        right: 4rem;
+        position: relative;
+        bottom: 10rem;
+        color: #FFF;
+        font-family: Poppins;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 16px;
+        margin-bottom: 20px;
+    }
+
+    .button-container {
+        left: 4rem;
+        bottom: 6rem;
+        position: relative;
+        display: flex;
+        gap: 20px; /* Adjust the gap between buttons */
+    }
+
+    button {
+        width: 354.87px;
+        height: 111px;
+        flex-shrink: 0;
+        border-radius: 56px;
+        background-color: transparent;
+        letter-spacing: 5px;
+        font-size: 22px;
+        font-weight: 400;
+        cursor: pointer;
+        opacity: 100%;
+        color: white;
+        border: 1px solid white;
+        font-family: Poppins;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: white;
+        color: black;
+    }
+</style>
+
+<body>
+    <h1>PAYROLL <br> MANAGEMENT</h1>
+    <div class="button-container">
+        <a href="ADD.html">
+            <button class="btn_1">ADD EMPLOYEE</button>
+        </a>
+        <a href="emp.html">
+            <button class="btn_1">SEARCH EMPLOYEE</button>
+        </a>
+    </div>
+</body>
+
+<script>
+    function RedirectToAdd() {
+        window.location.href = '/ADD.html';
+    }
+</script>
+
+</html>
